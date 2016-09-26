@@ -43,6 +43,7 @@ public class PlayListTableModel implements TableModel {
 	private boolean artistVisible = true;
 	private boolean albumVisible = true;
 	private boolean genreVisible = true;
+	private boolean durationVisible = true;
 
 	private enum PlayListColumn {FAVORITE, TRACK, TITLE, ARTIST, ALBUM, GENRE, DURATION}
 	private static PlayListColumn[] headers = {PlayListColumn.FAVORITE, PlayListColumn.TRACK, PlayListColumn.TITLE, PlayListColumn.ARTIST, PlayListColumn.ALBUM, PlayListColumn.GENRE, PlayListColumn.DURATION};
@@ -103,7 +104,8 @@ public class PlayListTableModel implements TableModel {
 			currentHeaders[c++] = PlayListColumn.ALBUM;
 		if (genreVisible)
 			currentHeaders[c++] = PlayListColumn.GENRE;
-		currentHeaders[c] = PlayListColumn.DURATION;
+		if (durationVisible) //added
+			currentHeaders[c++] = PlayListColumn.DURATION;
 	}
 	
 	private PlayListColumn getColumn(int colIndex) {
@@ -115,8 +117,8 @@ public class PlayListTableModel implements TableModel {
 	}
 
 	public int getColumnCount() {
-		return headers.length - (trackVisible ? 0 : 1) - (artistVisible ? 0 : 1) - (albumVisible ? 0 : 1) - (genreVisible ? 0 : 1);
-	}
+		return headers.length - (trackVisible ? 0 : 1) - (artistVisible ? 0 : 1) - (albumVisible ? 0 : 1) - (genreVisible ? 0 : 1) - (durationVisible ? 0:1);
+	} //added
 	
 	public String getColumnName(int colIndex) {
 		return columnNames.get(getColumn(colIndex));
@@ -308,6 +310,11 @@ public class PlayListTableModel implements TableModel {
 		refresh();
 	}
 
+	public void setDurationVisible(boolean durationVisible) {
+		this.durationVisible = durationVisible;
+		setCurrentHeaders();
+		refresh();
+	}
 	public boolean isGenreVisible() {
 		return genreVisible;
 	}
@@ -315,5 +322,7 @@ public class PlayListTableModel implements TableModel {
 	public boolean isTrackVisible() {
 		return trackVisible;
 	}
+
+	public boolean isDurationVisible(){ return durationVisible; }
 	
 }

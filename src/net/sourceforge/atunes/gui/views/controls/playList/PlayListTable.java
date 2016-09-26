@@ -64,6 +64,7 @@ public class PlayListTable extends JTable {
 	private JMenuItem editTagItem;
 	private JMenuItem autoSetTrackNumberItem;
 	private JMenuItem autoSetGenreItem;
+	private JMenuItem autoSetDurationItem;
 
 	private JMenuItem saveItem;
 	private JMenuItem loadItem;
@@ -320,5 +321,8 @@ public class PlayListTable extends JTable {
 
 	public JMenuItem getAutoSetGenreItem() {
 		return autoSetGenreItem;
+	}
+	public JMenuItem getAutoSetDurationItem() {
+		return autoSetDurationItem;
 	}
 }

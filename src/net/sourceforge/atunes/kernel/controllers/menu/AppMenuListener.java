@@ -81,6 +81,8 @@ public class AppMenuListener implements ActionListener {
 			HandlerProxy.getControllerHandler().getPlayListController().setTrackNumber();
 		else if (e.getSource().equals(menu.getPlayListAutoSetGenre()))
 			HandlerProxy.getControllerHandler().getPlayListController().setGenre();
+//		else if (e.getSource().equals(menu.getPlayListAutoSetDuration()))
+//			HandlerProxy.getControllerHandler().getPlayListController().setDuration();
 		else if (e.getSource().equals(menu.getPlayListSave()))
 			HandlerProxy.getPlayListHandler().savePlaylist();
 		else if (e.getSource().equals(menu.getPlayListLoad()))

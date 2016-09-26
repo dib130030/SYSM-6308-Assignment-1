@@ -50,6 +50,8 @@ public class PlayListListener extends MouseAdapter implements ActionListener, Li
 			controller.setTrackNumber();
 		else if (e.getSource().equals(table.getAutoSetGenreItem()))
 			controller.setGenre();
+//		else if (e.getSource().equals(table.getAutoSetDurationItem()))
+//			controller.setDuration();
 		else if (e.getSource().equals(table.getSaveItem()))
 			HandlerProxy.getPlayListHandler().savePlaylist();
 		else if (e.getSource().equals(table.getLoadItem()))

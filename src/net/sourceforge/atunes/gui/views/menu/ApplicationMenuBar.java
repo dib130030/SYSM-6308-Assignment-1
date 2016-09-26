@@ -79,6 +79,7 @@ public class ApplicationMenuBar extends JMenuBar {
 	private JMenuItem playListEditTag;
 	private JMenuItem playListAutoSetTrack;
 	private JMenuItem playListAutoSetGenre;
+	//private JMenuItem playListAutoSetDuration;
 	private JMenuItem playListSave;
 	private JMenuItem playListLoad;
 	private JMenuItem playListFilter;
@@ -170,6 +171,7 @@ public class ApplicationMenuBar extends JMenuBar {
 		playListEditTag = new JMenuItem(LanguageTool.getString("EDIT_TAG"));
 		playListAutoSetTrack = new JMenuItem(LanguageTool.getString("AUTO_SET_TRACK_NUMBER"));
 		playListAutoSetGenre = new JMenuItem(LanguageTool.getString("AUTO_SET_GENRE"));
+		//playListAutoSetDuration = new JMenuItem(LanguageTool.getString("AUTO_SET_DURATION"));
 		playListTags.add(playListEditTag);
 		playListTags.add(playListAutoSetTrack);
 		playListTags.add(playListAutoSetGenre);
@@ -443,7 +445,9 @@ public class ApplicationMenuBar extends JMenuBar {
 	public JMenuItem getPlayListAutoSetGenre() {
 		return playListAutoSetGenre;
 	}
-
+//	public JMenuItem getPlayListAutoSetDuration() {
+//		return playListAutoSetDuration;
+//	}
 	public JMenuItem getPlayListAutoSetTrack() {
 		return playListAutoSetTrack;
 	}
